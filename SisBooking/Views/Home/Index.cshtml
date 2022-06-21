@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SisBooking.Models.Sede>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Sedes Recreativas y Apartamentos</h1>
+<hr/>
+<div class="container">
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-sedes-tab" data-bs-toggle="tab" data-bs-target="#nav-sedes" type="button" role="tab" aria-controls="nav-sedes" aria-selected="true">Sedes</button>
+            <button class="nav-link" id="nav-login-tab" data-bs-toggle="tab" data-bs-target="#nav-login" type="button" role="tab" aria-controls="nav-login" aria-selected="false">Agenda</button>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-sedes" role="tabpanel" aria-labelledby="nav-sedes-tab">
+            
+            <hr/>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Descripcion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Tipo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ubicacion)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tipo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ubicacion)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+            <hr/>
+            <h2>Inicie Sesión</h2>
+        </div>
+    </div>
+</div>
+        
+
+
+
+

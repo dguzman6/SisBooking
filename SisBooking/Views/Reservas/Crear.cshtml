@@ -1,0 +1,94 @@
+﻿@model SisBooking.Models.Alojamiento
+
+@{
+    ViewData["Title"] = "Reservar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Alojamiento</h1>
+<hr />
+<form action="VerificarDispAlojamiento">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="alert alert-info" role="alert">
+                    <div class="row">
+                        <div class="col">
+                            @Html.DisplayNameFor(Model => Model.Baño)
+                        </div>
+                        <div class="col">
+                            @Html.DisplayFor(Model => Model.Baño)
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            @Html.DisplayNameFor(Model => Model.CamaDoble)
+                        </div>
+                        <div class="col">
+                            @Html.DisplayFor(Model => Model.CamaDoble)
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            @Html.DisplayNameFor(Model => Model.Camarote)
+                        </div>
+                        <div class="col">
+                            @Html.DisplayFor(Model => Model.Camarote)
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            @Html.DisplayNameFor(Model => Model.Nevera)
+                        </div>
+                        <div class="col">
+                            @Html.DisplayFor(Model => Model.Nevera)
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            @Html.DisplayNameFor(Model => Model.Terraza)
+                        </div>
+                        <div class="col">
+                            @Html.DisplayFor(Model => Model.Terraza)
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            @Html.DisplayNameFor(Model => Model.TV)
+                        </div>
+                        <div class="col">
+                            @Html.DisplayFor(Model => Model.TV)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row gy-2">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="col">
+                        <label for="start">Fecha Inicial:</label>
+                        <input type="date" id="start" name="fini" required>
+                    </div>
+                    <div class="col">
+                        <label for="end">Fecha Final:</label>
+                        <input type="date" id="end" name="ffin" required />
+                    </div>
+                </div>
+                <div class="row gy-2">
+                    <input type="submit" asp-controller="Reservas" asp-action="VerificarDispAlojamiento" class="btn btn-primary" />
+                </div>
+                <div class="row gy-2">
+                    <div class="alert alert-primary" role="alert">
+                        @ViewData["result"]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>            

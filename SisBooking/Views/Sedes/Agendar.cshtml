@@ -1,0 +1,88 @@
+﻿@model IEnumerable<SisBooking.Models.Alojamiento>
+@{
+    ViewData["Title"] = "Agendar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2>Descripción</h2>
+                    <p class="card-text">@item.Descripcion</p>
+
+                        <div class="col">
+                            <div class="alert alert-info" role="alert">
+                                <div class="row">
+                                    <div class="col">
+                                        @Html.DisplayNameFor(model => item.Baño)
+                                    </div>
+                                    <div class="col">
+                                        @Html.DisplayFor(model => item.Baño)
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col">
+                                        @Html.DisplayNameFor(model => item.CamaDoble)
+                                    </div>
+                                    <div class="col">
+                                        @Html.DisplayFor(model => item.CamaDoble)
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col">
+                                        @Html.DisplayNameFor(model => item.Camarote)
+                                    </div>
+                                    <div class="col">
+                                        @Html.DisplayFor(model => item.Camarote)
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col">
+                                        @Html.DisplayNameFor(model => item.Nevera)
+                                    </div>
+                                    <div class="col">
+                                        @Html.DisplayFor(model => item.Nevera)
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col">
+                                        @Html.DisplayNameFor(model => item.Terraza)
+                                    </div>
+                                    <div class="col">
+                                        @Html.DisplayFor(model => item.Terraza)
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col">
+                                        @Html.DisplayNameFor(model => item.TV)
+                                    </div>
+                                    <div class="col">
+                                        @Html.DisplayFor(model => item.TV)
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+
+
+
+                    <a asp-controller="Reservas" asp-action="Crear" asp-route-id="@item.Id" >Ver Disponibilidad</a>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+
+</div>
